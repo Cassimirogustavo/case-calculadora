@@ -13,33 +13,34 @@ namespace Calculadora
                 case '+': operacao.resultado = soma(operacao); break;
                 case '-': operacao.resultado = subtracao(operacao); break;
                 case '*': operacao.resultado = multiplicacao(operacao); break;
-                case '/': operacao.resultado = divisao(operacao); break; // Adicionado caso para divisão
+                case '/': operacao.resultado = divisao(operacao); break;
                 default: operacao.resultado = 0; break;
             }
             return operacao;
         }
 
         // Métodos para realizar as operações matemáticas
-        public int soma(Operacoes operacao)
+        public long soma(Operacoes operacao)
         {
             return operacao.valorA + operacao.valorB;
         }
 
-        public int subtracao(Operacoes operacao)
+        public long subtracao(Operacoes operacao)
         {
             return operacao.valorA - operacao.valorB;
         }
 
-        public int multiplicacao(Operacoes operacao)
+        public long multiplicacao(Operacoes operacao)
         {
             return operacao.valorA * operacao.valorB;
         }
 
-        public decimal divisao(Operacoes operacao)
+        public long divisao(Operacoes operacao)
         {
             if (operacao.valorB != 0)
             {
-                return (decimal)operacao.valorA / operacao.valorB;
+                // Conversão explícita de decimal para long
+                return (long)(operacao.valorA / operacao.valorB);
             }
             else
             {
