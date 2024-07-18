@@ -2,10 +2,9 @@ namespace Calculadora
 {
     public class Operacoes
     {
-        // Propriedades para armazenar os valores e operador da operação
-        public int valorA { get; set; }
+        public long valorA { get; set; }  // Alterado para long
         public char operador { get; set; }
-        public int valorB { get; set; }
-        public decimal resultado { get; set; }
+        public long valorB { get; set; }  // Alterado para long
+        public long resultado { get; set; }  // Alterado para long
     }
 }
