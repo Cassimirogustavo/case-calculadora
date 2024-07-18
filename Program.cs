@@ -1,5 +1,4 @@
 using System;
-using System.Collections;
 using System.Collections.Generic;
 
 namespace Calculadora
@@ -10,7 +9,7 @@ namespace Calculadora
         {
             // Criação da fila de operações
             Queue<Operacoes> filaOperacoes = new Queue<Operacoes>();
-            
+
             // Adicionando operações à fila
             filaOperacoes.Enqueue(new Operacoes { valorA = 2, valorB = 3, operador = '+' });
             filaOperacoes.Enqueue(new Operacoes { valorA = 14, valorB = 8, operador = '-' });
@@ -22,23 +21,23 @@ namespace Calculadora
             Calculadora calculadora = new Calculadora();
 
             // Pilha para armazenar os resultados
-            Stack<decimal> resultados = new Stack<decimal>();
+            Stack<long> resultados = new Stack<long>();
 
             // Loop para processar todas as operações na fila
             while (filaOperacoes.Count > 0)
             {
                 // Retira a operação da fila
                 Operacoes operacao = filaOperacoes.Dequeue();
-                
+
                 // Realiza o cálculo e atualiza a operação com o resultado
                 operacao = calculadora.calcular(operacao);
-                
+
                 // Imprime o resultado da operação
                 Console.WriteLine("{0} {1} {2} = {3}", operacao.valorA, operacao.operador, operacao.valorB, operacao.resultado);
-                
+
                 // Imprime as operações pendentes
                 ImprimirOperacoesPendentes(filaOperacoes);
-                
+
                 // Armazena o resultado na pilha
                 resultados.Push(operacao.resultado);
             }
