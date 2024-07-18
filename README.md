@@ -1,25 +1,36 @@
-# Calculadora
-Case para Engenharia de Software JR
+Este repositório contém uma implementação básica de uma calculadora em C#, desenvolvida como parte de um estudo de caso para Engenharia de Software JR.
 
-Você precisa corrigir os seguintes problemas no codigo:
-  1. Aplicação só está processando o primeiro item da fila infinitamente.
-  2. Implemente a funcionalidade de divisão.
-  3. Aplicação não está calculando a penultima operação corretamente.
-     
-     	Saída esperada no console:
-     
-     		14 - 8 = 6
-     
-     		5 * 6 = 30
-     
-     		2147483647 + 2 = 2147483649
-     
-     		18 / 3 = 6
+## Funcionalidades Implementadas
 
-  5. Implemente uma funcionalidade para imprimir toda a lista de operaçõoes a ser processada após cada calculo realizado.
-  6. Crie uma nova pilha (Stack) para guardar o resultado de cada calculo efetuado e imprima a pilha ao final
+- **Adição**: Operações de soma (`+`).
+- **Subtração**: Operações de subtração (`-`).
+- **Multiplicação**: Operações de multiplicação (`*`).
+- **Divisão**: Implementada a operação de divisão (`/`), com tratamento para divisão por zero.
 
+## Problemas Corrigidos
 
-Não existe resposta certa ou errada, o objetivo do case é avaliar a linha de raciocínio de cada candidato.
-Você é livre para fazer na linguagem de sua preferência, desde que aplique as mesmas funcionalidades e tarefas deste case.
-Dica: Utilize Visual Code ou Visual Studio Community para realizar as tarefas.
+- Corrigido o problema de processar apenas o primeiro item da fila infinitamente.
+- Implementada a funcionalidade de divisão.
+- Corrigido o cálculo da penúltima operação.
+- Adicionada a funcionalidade para imprimir toda a lista de operações a serem processadas após cada cálculo realizado.
+- Criada uma pilha para salvar o resultado de cada cálculo concluído e imprimir a pilha ao final.
+
+## Estrutura do Código
+
+### Program.cs
+
+Contém a função principal que define as operações a serem realizadas e controla o fluxo principal da aplicação. Utiliza uma fila para armazenar e processar as operações e uma instância da classe `Calculadora` para executar os cálculos.
+
+### Calculadora.cs
+
+Define a lógica para realizar operações matemáticas básicas (`soma`, `subtracao`, `multiplicacao`, `divisao`). Cada operação é tratada de acordo com o operador especificado (`+`, `-`, `*`, `/`).
+
+### Operacoes.cs
+
+Define a estrutura de dados `Operacoes` para armazenar cada operação matemática, incluindo os valores dos operandos, o operador e o resultado da operação.
+
+## Como Usar
+
+1. Clone o repositório.
+2. Abra o projeto em um ambiente de desenvolvimento como Visual Studio.
+3. Execute o projeto para ver a calculadora em ação.
